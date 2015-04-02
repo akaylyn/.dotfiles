@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/Users/apollitt/src/DevDashboard/tools/server'
+let g:netrw_dirhist_2='/Users/apollitt/src/DevDashboard/tools/server/api'
+let g:netrw_dirhist_3='/Users/apollitt/src/DevDashboard/tools/server/api/buildHandlers'
+let g:netrw_dirhist_4='/Users/apollitt/Documents/Virtual Machines.localized'
+let g:netrw_dirhist_5='/Library/Application Support/VMware/VMware Fusion'
+let g:netrw_dirhist_6='/Library/Application Support/VMware/VMware Fusion/AdminWritable'
+let g:netrw_dirhist_7='/Library/Application Support/VMware/VMware Fusion'
+let g:netrw_dirhist_8='/Library/Application Support/VMware/VMware Fusion/Shared'
+let g:netrw_dirhist_9='/Users/apollitt'
