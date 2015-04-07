@@ -1,46 +1,44 @@
+
+" vundle {
 set nocompatible               " be iMproved
 filetype off                   " required!
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " let Vundle manage Vundle
 " required!
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
 "
 " original repos on github
-Bundle 'tpope/vim-fugitive'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'mileszs/ack.vim'
-Bundle 'kien/ctrlp.vim'
-Bundle 'scrooloose/syntastic'
-Bundle 'nathanaelkane/vim-indent-guides'
-Bundle 'flazz/vim-colorschemes'
-"Bundle 'nvie/vim-flake8'
-Bundle 'bling/vim-airline'
-Bundle 'guns/xterm-color-table.vim'
-"Bundle 'leafgarland/typescript-vim'
-Bundle 'jason0x43/vim-js-indent'
-Bundle 'groenewege/vim-less'
+Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'mileszs/ack.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'flazz/vim-colorschemes'
+"Plugin 'nvie/vim-flake8'
+Plugin 'bling/vim-airline'
+Plugin 'guns/xterm-color-table.vim'
+"Plugin 'leafgarland/typescript-vim'
+Plugin 'jason0x43/vim-js-indent'
+Plugin 'groenewege/vim-less'
+Plugin '907th/vim-auto-save'
 
-" vim-scripts repos
-"Bundle 'L9'
-"Bundle 'FuzzyFinder'
-" non github repos
-"Bundle 'git://git.wincent.com/command-t.git'
-" ...
-
+call vundle#end()
 filetype plugin indent on     " required!
 "
 " Brief help
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install(update) bundles
-" :BundleSearch(!) foo - search(or refresh cache first) for foo
-" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
-"
-" see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Bundle command are not allowed..
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just
+" :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to
+" auto-approve removal
+
+" } // end vundle
 
 set undodir=~/.cache/vim
 set t_Co=256
@@ -229,4 +227,30 @@ let python_highlight_builtins = 1
 
 " this is supposed to auto reload .vimrc ?
 autocmd BufWritePost .vimrc source %
+
+" vim-auto-save {
+    " AutoSave is disabled by default, run :AutoSaveToggle to enable/disable it.
+    " If you want plugin to be always enabled it can be done with g:auto_save option:
+
+    let g:auto_save = 1  " enable AutoSave on Vim startup
+
+    " AutoSave relies on CursorHold event and sets the updatetime option to 200 so that modifications are saved almost instantly.
+    " But sometimes changing the updatetime option may affect other plugins and break things.
+    " You can prevent AutoSave from changing the updatetime with g:auto_save_no_updatetime option:
+    "let g:auto_save_no_updatetime = 1  " do not change the 'updatetime' option
+
+    " You can disable AutoSave in insert mode with the g:auto_save_in_insert_mode option:
+    let g:auto_save_in_insert_mode = 0  " do not save while in insert mode
+
+    " AutoSave will display on the status line on each auto-save by default.
+    " (AutoSaved at 08:40:55)
+    " You can silence the display with the g:auto_save_silent option:
+    "let g:auto_save_silent = 1  " do not display the auto-save notification
+
+    " If you need an autosave hook (such as generating tags post-save) then use g:auto_save_postsave_hook option:
+    "let g:auto_save_postsave_hook = 'TagsGenerate'  " this will run :TagsGenerate after each save
+
+    "The events on which AutoSave will perform a save can also be adjusted using the g:auto_save_events option. Using InsertLeave and TextChanged only, for example, will save on every change in normal mode.
+    "let g:auto_save_events = ["InsertLeave", "TextChanged"]
+" }
 
